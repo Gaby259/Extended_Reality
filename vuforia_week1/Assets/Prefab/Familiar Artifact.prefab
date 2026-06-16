@@ -156,15 +156,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226991911662550561}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 1.471, z: -0.502}
-  m_LocalScale: {x: 0.17798996, y: 0.17798997, z: 0.17798997}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0, y: 0.99979293, z: -0, w: -0.020350065}
+  m_LocalPosition: {x: 0, y: 0.08, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8561715760265998758}
   - {fileID: 2234433989047912534}
   m_Father: {fileID: 8401690099425529426}
-  m_LocalEulerAnglesHint: {x: -90, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 182.332, z: 0}
 --- !u!65 &6588721688076141389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5006,7 +5006,16 @@ GameObject:
   - component: {fileID: 8401690099425529426}
   - component: {fileID: 2852494556741572300}
   - component: {fileID: 1737891256593758700}
-  - component: {fileID: 5243053993051462001}
+  - component: {fileID: 259985265397212762}
+  - component: {fileID: 5359888995334330606}
+  - component: {fileID: 7823117577506931906}
+  - component: {fileID: 2911026361584999431}
+  - component: {fileID: 1205336953455062291}
+  - component: {fileID: 3022309352245032202}
+  - component: {fileID: 873783552814597793}
+  - component: {fileID: 2771644145306641867}
+  - component: {fileID: 6523805479545721274}
+  - component: {fileID: 8118562523923508026}
   m_Layer: 0
   m_Name: Familiar Artifact
   m_TagString: Untagged
@@ -5057,7 +5066,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 5243053993051462001}
+  mPreview: {fileID: 8118562523923508026}
 --- !u!114 &1737891256593758700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5126,7 +5135,178 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &5243053993051462001
+--- !u!114 &259985265397212762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533040093331773505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 2852494556741572300}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 20260614_201109000_iOS
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 2852494556741572300}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &5359888995334330606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533040093331773505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 2852494556741572300}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 20260614_201109000_iOS
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 2852494556741572300}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &7823117577506931906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533040093331773505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 2852494556741572300}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 20260614_201109000_iOS
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 2852494556741572300}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &2911026361584999431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533040093331773505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 2852494556741572300}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 20260614_201109000_iOS
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 2852494556741572300}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &1205336953455062291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533040093331773505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 2852494556741572300}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 20260614_201109000_iOS
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 2852494556741572300}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &3022309352245032202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533040093331773505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 2852494556741572300}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 20260614_201109000_iOS
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 2852494556741572300}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &873783552814597793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533040093331773505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 2852494556741572300}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 20260614_201109000_iOS
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 2852494556741572300}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &2771644145306641867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533040093331773505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 2852494556741572300}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 20260614_201109000_iOS
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 2852494556741572300}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &6523805479545721274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533040093331773505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 2852494556741572300}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 20260614_201109000_iOS
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 2852494556741572300}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &8118562523923508026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
