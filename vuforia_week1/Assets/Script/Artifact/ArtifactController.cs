@@ -20,7 +20,10 @@ public class ArtifactController : MonoBehaviour
         }
         startRotation = transform.localRotation;
     }
-
+    public void Activate(ArtifactData data)
+    {
+        artifactId = data.artifactName;
+    }
     public void SetArtifactId(string id)
     {
         artifactId = id;
@@ -68,5 +71,6 @@ public class ArtifactController : MonoBehaviour
         {
             Debug.LogError("[ArtifactController] ScanProgressManager instance not found.");
         }
+       
     }
 }
