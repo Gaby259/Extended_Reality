@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     [Header("Info Popup")]
     public ArtifactInfoPopup artifactInfoPopup;
 
+    public bool IsARActive { get; private set; } = false;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -31,6 +33,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowStart()
     {
+        IsARActive = false;
         startCanvas.SetActive(true);
         instructionsCanvas.SetActive(false);
         infoPopupCanvas.SetActive(false);
@@ -45,9 +48,15 @@ public class UIManager : MonoBehaviour
 
     public void ShowAR()
     {
+        IsARActive = true;
         startCanvas.SetActive(false);
         instructionsCanvas.SetActive(false);
         infoPopupCanvas.SetActive(false);
+
+        // Enable all artifact spawners now that AR has started
+        var spawners = FindObjectsByType<ArtifactSpawner>(FindObjectsSortMode.None);
+        foreach (var spawner in spawners)
+            spawner.enabled = true;
     }
 
     public void ShowInfoPopup(ArtifactData data)

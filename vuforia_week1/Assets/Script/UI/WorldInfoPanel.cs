@@ -69,6 +69,12 @@ public class WorldInfoPanel : MonoBehaviour
 
     private void OnTapped()
     {
+        if (UIManager.Instance == null || !UIManager.Instance.IsARActive)
+        {
+            Debug.LogWarning("WorldInfoPanel: tap ignored, AR is not active.");
+            return;
+        }
+
         if (artifactData == null)
         {
             Debug.LogError("WorldInfoPanel: artifactData is null. Was Setup() called?");

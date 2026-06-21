@@ -7,28 +7,35 @@ public class ArtifactSpawner : MonoBehaviour
     public ArtifactData artifactData;
 
     [Header("World Info Panel")]
-    public GameObject worldInfoPanelPrefab;
-    public Vector3 infoPanelOffset = new Vector3(0.15f, 0f, 0f);
+    public WorldInfoPanel sceneInfoPanel;
 
-    private GameObject spawnedArtifact;
     private GameObject spawnedEffect;
-    private GameObject spawnedInfoPanel;
     private ObserverBehaviour observer;
 
-    void Start()
+    void Awake()
     {
         observer = GetComponent<ObserverBehaviour>();
 
         if (observer == null)
             throw new System.Exception($"ArtifactSpawner on {gameObject.name}: missing ObserverBehaviour.");
-
-        observer.OnTargetStatusChanged += OnTargetStatusChanged;
     }
 
-    void OnDestroy()
+    void OnEnable()
+    {
+        if (observer != null)
+            observer.OnTargetStatusChanged += OnTargetStatusChanged;
+
+        if (sceneInfoPanel != null)
+            sceneInfoPanel.gameObject.SetActive(false);
+    }
+
+    void OnDisable()
     {
         if (observer != null)
             observer.OnTargetStatusChanged -= OnTargetStatusChanged;
+
+        if (sceneInfoPanel != null)
+            sceneInfoPanel.gameObject.SetActive(false);
     }
 
     private void OnTargetStatusChanged(ObserverBehaviour behaviour, TargetStatus status)
@@ -68,34 +75,18 @@ public class ArtifactSpawner : MonoBehaviour
 
     private void OnRevealComplete()
     {
-        if (artifactData.artifactPrefab != null)
+        if (sceneInfoPanel != null)
         {
-            spawnedArtifact = Instantiate(artifactData.artifactPrefab, transform.position, transform.rotation, transform);
-
-            var controller = spawnedArtifact.GetComponent<ArtifactController>();
-
-            if (controller != null)
-                controller.Activate(artifactData);
-        }
-
-        if (worldInfoPanelPrefab != null)
-        {
-            Vector3 panelPos = transform.position + transform.TransformDirection(infoPanelOffset);
-            spawnedInfoPanel = Instantiate(worldInfoPanelPrefab, panelPos, transform.rotation, transform);
-
-            var infoPanel = spawnedInfoPanel.GetComponent<WorldInfoPanel>();
-
-            if (infoPanel == null)
-                throw new System.Exception("worldInfoPanelPrefab is missing WorldInfoPanel component.");
-
-            infoPanel.Setup(artifactData);
+            sceneInfoPanel.gameObject.SetActive(true);
+            sceneInfoPanel.Setup(artifactData);
         }
     }
 
     private void OnMarkerLost()
     {
-        if (spawnedArtifact != null) { Destroy(spawnedArtifact); spawnedArtifact = null; }
         if (spawnedEffect != null) { Destroy(spawnedEffect); spawnedEffect = null; }
-        if (spawnedInfoPanel != null) { Destroy(spawnedInfoPanel); spawnedInfoPanel = null; }
+
+        if (sceneInfoPanel != null)
+            sceneInfoPanel.gameObject.SetActive(false);
     }
 }
