@@ -3,27 +3,28 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class ArtifactController : MonoBehaviour
 {
-    [SerializeField] private float wiggleAngle = 10f;
-    [SerializeField] private float wiggleSpeed = 2f;
+    [SerializeField] private float floatHeight = 0.05f;
+    [SerializeField] private float floatSpeed = 2f;
 
     private string artifactId;
     private Animator animator;
-    private Quaternion startRotation;
+    private Vector3 startPosition;
     private bool isInteractable = true;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
         if (animator == null)
-        {
             Debug.LogError($"[ArtifactController] No Animator found on {name}.");
-        }
-        startRotation = transform.localRotation;
+
+        startPosition = transform.localPosition;
     }
+
     public void Activate(ArtifactData data)
     {
         artifactId = data.artifactName;
     }
+
     public void SetArtifactId(string id)
     {
         artifactId = id;
@@ -33,8 +34,8 @@ public class ArtifactController : MonoBehaviour
     {
         if (isInteractable)
         {
-            float angle = Mathf.Sin(Time.time * wiggleSpeed) * wiggleAngle;
-            transform.localRotation = startRotation * Quaternion.Euler(0f, 0f, angle);
+            float offsetY = Mathf.Sin(Time.time * floatSpeed) * floatHeight;
+            transform.localPosition = startPosition + new Vector3(0f, offsetY, 0f);
         }
     }
 
@@ -52,7 +53,7 @@ public class ArtifactController : MonoBehaviour
         }
 
         isInteractable = false;
-        transform.localRotation = startRotation;
+        transform.localPosition = startPosition;
 
         if (animator != null)
         {
@@ -71,6 +72,5 @@ public class ArtifactController : MonoBehaviour
         {
             Debug.LogError("[ArtifactController] ScanProgressManager instance not found.");
         }
-       
     }
 }
