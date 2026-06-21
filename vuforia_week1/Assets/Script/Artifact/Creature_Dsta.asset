@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Creature_Dsta
   m_EditorClassIdentifier: Assembly-CSharp::ArtifactData
   artifactPrefab: {fileID: 4604767847306804441, guid: 3f1736cfd580aed48a45dba7dacd34a7, type: 3}
-  revealEffectPrefab: {fileID: 0}
+  revealEffectPrefab: {fileID: 6950779137715890292, guid: 02e2358a85308b2499e3a5ce87f175bb, type: 3}
   artifactName: Creature
   artifactDescription: fdhilshdfuihsfuihuhfe
   artifactImage: {fileID: 21300000, guid: c837d6b0f671caf4ab6c399c806ce5fe, type: 3}

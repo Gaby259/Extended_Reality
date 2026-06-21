@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 8717056094874289361}
   - component: {fileID: 4486542807595085482}
   - component: {fileID: 2099588830719338451}
-  - component: {fileID: 6574599792038770791}
+  - component: {fileID: 7028250414838285133}
   m_Layer: 0
   m_Name: PotionArtifact
   m_TagString: Untagged
@@ -124,8 +124,8 @@ Transform:
   m_Children:
   - {fileID: 3585474091331936485}
   - {fileID: 1781225302016917501}
-  - {fileID: 5365983604469181952}
   - {fileID: 647962907223440118}
+  - {fileID: 5365983604469181952}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8717056094874289361
@@ -154,7 +154,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 6574599792038770791}
+  mPreview: {fileID: 7028250414838285133}
 --- !u!114 &4486542807595085482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,8 +236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArtifactSpawner
   artifactData: {fileID: 11400000, guid: 1e8af4147d190be47b7a065fe7614cb6, type: 2}
+  artifactObject: {fileID: 0}
   sceneInfoPanel: {fileID: 5139395445201042658}
---- !u!114 &6574599792038770791
+  artifactHideDelay: 0
+--- !u!114 &7028250414838285133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1628,8 +1630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46ad3e615dcc5544b4bb82ce167346b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArtifactController
-  floatHeight: 0.05
-  floatSpeed: 2
+  floatHeight: 0.003
+  floatSpeed: 1
 --- !u!1 &4702644290807865946
 GameObject:
   m_ObjectHideFlags: 0

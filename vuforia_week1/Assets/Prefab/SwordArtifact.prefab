@@ -663,7 +663,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.18, y: 0.18, z: 0.18}
+  m_LocalScale: {x: 0.226674, y: 0.226674, z: 0.226674}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1134160419856339671}
@@ -963,11 +963,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6488607454408294950}
   - component: {fileID: 30650996272724192}
-  - component: {fileID: 846492130774339384}
   - component: {fileID: 4637349245671949186}
-  - component: {fileID: 5061248763824874271}
-  - component: {fileID: 5047466319265027919}
-  - component: {fileID: 4634047900055737166}
+  - component: {fileID: 1459721426496688987}
   m_Layer: 0
   m_Name: SwordArtifact
   m_TagString: Untagged
@@ -990,8 +987,8 @@ Transform:
   m_Children:
   - {fileID: 7758434131631996260}
   - {fileID: 5544125905797168682}
-  - {fileID: 1843857277068828175}
   - {fileID: 7005419272231441664}
+  - {fileID: 1843857277068828175}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &30650996272724192
@@ -1009,86 +1006,18 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: Art_Monster
+  mTrackableName: Art_Sword
   mInitializedInEditor: 1
   mDataSetPath: 
-  mAspectRatio: 1.0549777
+  mAspectRatio: 1.0475483
   mImageTargetType: 3
-  mWidth: 1.8957746
+  mWidth: 1.9092197
   mHeight: 1.9999999
-  mRuntimeTexture: {fileID: 2800000, guid: ddc8c67ad3628bb49bfbde657de2185f, type: 3}
+  mRuntimeTexture: {fileID: 2800000, guid: f4e9fb39a37c08f47bd8fb00cf530c7b, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 4634047900055737166}
---- !u!114 &846492130774339384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248316965567887374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: VuforiaScripts::DefaultObserverEventHandler
-  StatusFilter: 0
-  UsePoseSmoothing: 1
-  AnimationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 3.3333333
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.3
-      value: 1
-      inSlope: 3.3333333
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  OnTargetFound:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Canvas, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTargetLost:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Canvas, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  mPreview: {fileID: 1459721426496688987}
 --- !u!114 &4637349245671949186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1101,9 +1030,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1359c6295aa19444895b0d7c688f6d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArtifactSpawner
-  artifactData: {fileID: 11400000, guid: aaf5eae64511b744c95a56a3aae75169, type: 2}
+  artifactData: {fileID: 11400000, guid: 63bfbfffff57f96429c9c05664a173b0, type: 2}
+  artifactObject: {fileID: 0}
   sceneInfoPanel: {fileID: 3356577619106501396}
---- !u!114 &5061248763824874271
+  artifactHideDelay: 0
+--- !u!114 &1459721426496688987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1117,45 +1048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
   mObserverBehaviour: {fileID: 30650996272724192}
   mHiddenRoot: {fileID: 0}
-  mTargetName: Art_Monster
-  mDatasetName: 
-  mCastedBehaviour: {fileID: 30650996272724192}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &5047466319265027919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248316965567887374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 30650996272724192}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Art_Monster
-  mDatasetName: 
-  mCastedBehaviour: {fileID: 30650996272724192}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &4634047900055737166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248316965567887374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 30650996272724192}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Art_Monster
+  mTargetName: Art_Sword
   mDatasetName: 
   mCastedBehaviour: {fileID: 30650996272724192}
   mMeshFilter: {fileID: 0}
@@ -2454,6 +2347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1134160419856339671}
+  - component: {fileID: 24462910959694252}
   m_Layer: 0
   m_Name: ebonchill_magic_sword (1)
   m_TagString: Untagged
@@ -2477,6 +2371,28 @@ Transform:
   - {fileID: 6136198112385665332}
   m_Father: {fileID: 5544125905797168682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &24462910959694252
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2776024711061930175}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51f71542a19a3d14c85c747c4cdee29c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2808363503023812269
 GameObject:
   m_ObjectHideFlags: 0
@@ -6239,7 +6155,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7758434131631996260}
   - component: {fileID: 7354896221602757402}
-  - component: {fileID: 8651540466385386380}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -6283,28 +6198,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &8651540466385386380
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7909098318910702044}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51f71542a19a3d14c85c747c4cdee29c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7940011019885732966
 GameObject:
   m_ObjectHideFlags: 0

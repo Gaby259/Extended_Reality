@@ -64,6 +64,8 @@ GameObject:
   - component: {fileID: 7168350739757961977}
   - component: {fileID: 4649024170211307498}
   - component: {fileID: 5957973013219479829}
+  - component: {fileID: 3481964448830239983}
+  - component: {fileID: 8575521111976174639}
   m_Layer: 0
   m_Name: WitchHat
   m_TagString: Untagged
@@ -142,6 +144,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &3481964448830239983
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115898003523633769}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8575521111976174639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115898003523633769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46ad3e615dcc5544b4bb82ce167346b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArtifactController
+  floatHeight: 0.09
+  floatSpeed: 2
 --- !u!1 &7044577821733506184
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,8 +192,7 @@ GameObject:
   - component: {fileID: 4261392834703780052}
   - component: {fileID: 4095457615467407671}
   - component: {fileID: 977118882437241439}
-  - component: {fileID: 5032017207228324513}
-  - component: {fileID: 5360776282737351633}
+  - component: {fileID: 8987146444191121427}
   m_Layer: 0
   m_Name: HatArtifact
   m_TagString: Untagged
@@ -178,8 +215,8 @@ Transform:
   m_Children:
   - {fileID: 3305458353323632162}
   - {fileID: 7168350739757961977}
-  - {fileID: 1213483145809548363}
   - {fileID: 2854964587742642691}
+  - {fileID: 1213483145809548363}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4261392834703780052
@@ -208,7 +245,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 5360776282737351633}
+  mPreview: {fileID: 8987146444191121427}
 --- !u!114 &4095457615467407671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,27 +327,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArtifactSpawner
   artifactData: {fileID: 11400000, guid: 6740bbfee65feb9479fbe6e1eded1b9b, type: 2}
+  artifactObject: {fileID: 0}
   sceneInfoPanel: {fileID: 7508086700889932823}
---- !u!114 &5032017207228324513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7044577821733506184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 4261392834703780052}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Art_Hat
-  mDatasetName: 
-  mCastedBehaviour: {fileID: 4261392834703780052}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &5360776282737351633
+  artifactHideDelay: 0
+--- !u!114 &8987146444191121427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

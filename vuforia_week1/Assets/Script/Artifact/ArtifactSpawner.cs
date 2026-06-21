@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Vuforia;
 
@@ -5,12 +6,18 @@ public class ArtifactSpawner : MonoBehaviour
 {
     [Header("Artifact")]
     public ArtifactData artifactData;
+    public GameObject artifactObject;
 
     [Header("World Info Panel")]
     public WorldInfoPanel sceneInfoPanel;
 
+    [Header("Timing")]
+    [SerializeField] private float artifactHideDelay = 0f;
+
     private GameObject spawnedEffect;
     private ObserverBehaviour observer;
+    private Coroutine markerFoundCoroutine;
+    private bool isTracked = false;
 
     void Awake()
     {
@@ -27,6 +34,9 @@ public class ArtifactSpawner : MonoBehaviour
 
         if (sceneInfoPanel != null)
             sceneInfoPanel.gameObject.SetActive(false);
+
+        if (artifactObject != null)
+            artifactObject.SetActive(false);
     }
 
     void OnDisable()
@@ -40,21 +50,48 @@ public class ArtifactSpawner : MonoBehaviour
 
     private void OnTargetStatusChanged(ObserverBehaviour behaviour, TargetStatus status)
     {
-        bool isTracked = status.Status == Status.TRACKED || status.Status == Status.EXTENDED_TRACKED;
+        bool tracked = status.Status == Status.TRACKED || status.Status == Status.EXTENDED_TRACKED;
 
-        if (isTracked)
-            OnMarkerFound();
+        if (tracked)
+        {
+            isTracked = true;
+
+            if (markerFoundCoroutine != null)
+                StopCoroutine(markerFoundCoroutine);
+
+            // Clean up any existing effect before starting fresh
+            CancelAndDestroyEffect();
+
+            markerFoundCoroutine = StartCoroutine(MarkerFoundRoutine());
+        }
         else
+        {
+            isTracked = false;
+
+            if (markerFoundCoroutine != null)
+            {
+                StopCoroutine(markerFoundCoroutine);
+                markerFoundCoroutine = null;
+            }
+
             OnMarkerLost();
+        }
     }
 
-    private void OnMarkerFound()
+    private IEnumerator MarkerFoundRoutine()
     {
         if (artifactData == null)
         {
             Debug.LogError($"ArtifactSpawner on {gameObject.name}: ArtifactData is not assigned.");
-            return;
+            yield break;
         }
+
+        yield return new WaitForSeconds(artifactHideDelay);
+
+        if (!isTracked) yield break;
+
+        if (artifactObject != null)
+            artifactObject.SetActive(false);
 
         if (artifactData.revealEffectPrefab != null)
         {
@@ -75,6 +112,11 @@ public class ArtifactSpawner : MonoBehaviour
 
     private void OnRevealComplete()
     {
+        if (!isTracked) return;
+
+        if (artifactObject != null)
+            artifactObject.SetActive(true);
+
         if (sceneInfoPanel != null)
         {
             sceneInfoPanel.gameObject.SetActive(true);
@@ -84,9 +126,24 @@ public class ArtifactSpawner : MonoBehaviour
 
     private void OnMarkerLost()
     {
-        if (spawnedEffect != null) { Destroy(spawnedEffect); spawnedEffect = null; }
+        CancelAndDestroyEffect();
+
+        if (artifactObject != null)
+            artifactObject.SetActive(false);
 
         if (sceneInfoPanel != null)
             sceneInfoPanel.gameObject.SetActive(false);
+    }
+
+    private void CancelAndDestroyEffect()
+    {
+        if (spawnedEffect != null)
+        {
+            var reveal = spawnedEffect.GetComponent<ArtifactRevealEffect>();
+            if (reveal != null) reveal.Cancel();
+
+            Destroy(spawnedEffect);
+            spawnedEffect = null;
+        }
     }
 }

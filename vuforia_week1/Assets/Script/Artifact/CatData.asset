@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CatData
   m_EditorClassIdentifier: Assembly-CSharp::ArtifactData
   artifactPrefab: {fileID: 5533040093331773505, guid: e4584693c7f7a0c428879b2447bc44e2, type: 3}
-  revealEffectPrefab: {fileID: 0}
+  revealEffectPrefab: {fileID: 2693000253085652683, guid: f3296cb70886a3f4ab95101e83a66556, type: 3}
   artifactName: Black Cat
   artifactDescription: 'This is my choising familiar '
   artifactImage: {fileID: 21300000, guid: 6992666aac33c924b9ef8ad218894557, type: 3}
