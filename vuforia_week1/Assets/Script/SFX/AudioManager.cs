@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)] public float gameplayMusicVolume = 0.5f;
     [Range(0f, 1f)] public float sfxVolume = 1f;
     [Range(0f, 1f)] public float ambientVolume = 0.7f;
+    [Range(0f, 1f)] public float revealVolume = 1f;
 
     [Header("Settings")]
     [SerializeField] private float crossfadeDuration = 1.5f;
@@ -25,6 +26,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource gameplayMusicSource;
     private AudioSource sfxSource;
     private AudioSource ambientSource;
+    private AudioSource revealSource;
 
     void Awake()
     {
@@ -41,6 +43,7 @@ public class AudioManager : MonoBehaviour
         gameplayMusicSource = CreateAudioSource(true);
         sfxSource = CreateAudioSource(false);
         ambientSource = CreateAudioSource(false);
+        revealSource = CreateAudioSource(false);
     }
 
     private AudioSource CreateAudioSource(bool loop)
@@ -110,7 +113,14 @@ public class AudioManager : MonoBehaviour
     public void PlayRevealSound(AudioClip clip)
     {
         if (clip == null) return;
-        sfxSource.PlayOneShot(clip, sfxVolume);
+        revealSource.clip = clip;
+        revealSource.volume = revealVolume;
+        revealSource.Play();
+    }
+
+    public void StopRevealSound()
+    {
+        revealSource.Stop();
     }
 
     public void PlayArtifactAmbient(AudioClip clip)

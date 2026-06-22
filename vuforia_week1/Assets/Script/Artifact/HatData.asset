@@ -17,5 +17,5 @@ MonoBehaviour:
   artifactName: Magic Hat
   artifactDescription: nlalkdfytgusdfiuyfdif
   artifactImage: {fileID: 21300000, guid: 118c99ea7e03e0e4b99a3d34a24af5fa, type: 3}
-  revealSound: {fileID: 8300000, guid: 6ac2e59bbbf323647a0e6a697ad123f8, type: 3}
+  revealSound: {fileID: 8300000, guid: 9b81b3eb5fd77b840a6a4be5fd8f451b, type: 3}
   ambientSound: {fileID: 8300000, guid: 336faa74dcffe224c8425ed0c3d4fae1, type: 3}
