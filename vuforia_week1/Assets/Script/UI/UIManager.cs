@@ -37,6 +37,8 @@ public class UIManager : MonoBehaviour
         startCanvas.SetActive(true);
         instructionsCanvas.SetActive(false);
         infoPopupCanvas.SetActive(false);
+
+        AudioManager.Instance?.PlayMenuMusic();
     }
 
     public void ShowInstructions()
@@ -53,7 +55,8 @@ public class UIManager : MonoBehaviour
         instructionsCanvas.SetActive(false);
         infoPopupCanvas.SetActive(false);
 
-        // Enable all artifact spawners now that AR has started
+        AudioManager.Instance?.TransitionToGameplay();
+
         var spawners = FindObjectsByType<ArtifactSpawner>(FindObjectsSortMode.None);
         foreach (var spawner in spawners)
             spawner.enabled = true;

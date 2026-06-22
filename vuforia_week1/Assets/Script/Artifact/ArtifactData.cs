@@ -12,4 +12,8 @@ public class ArtifactData : ScriptableObject
     [TextArea(3, 6)]
     public string artifactDescription;
     public Sprite artifactImage;
+    
+    [Header("Audio")]
+    public AudioClip revealSound;
+    public AudioClip ambientSound;
 }

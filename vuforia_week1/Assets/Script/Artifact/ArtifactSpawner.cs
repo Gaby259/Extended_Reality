@@ -59,7 +59,6 @@ public class ArtifactSpawner : MonoBehaviour
             if (markerFoundCoroutine != null)
                 StopCoroutine(markerFoundCoroutine);
 
-            // Clean up any existing effect before starting fresh
             CancelAndDestroyEffect();
 
             markerFoundCoroutine = StartCoroutine(MarkerFoundRoutine());
@@ -102,6 +101,8 @@ public class ArtifactSpawner : MonoBehaviour
             if (reveal == null)
                 throw new System.Exception($"{artifactData.name} revealEffectPrefab is missing ArtifactRevealEffect component.");
 
+            AudioManager.Instance?.PlayRevealSound(artifactData.revealSound);
+
             reveal.Play(OnRevealComplete);
         }
         else
@@ -117,6 +118,8 @@ public class ArtifactSpawner : MonoBehaviour
         if (artifactObject != null)
             artifactObject.SetActive(true);
 
+        AudioManager.Instance?.PlayArtifactAmbient(artifactData.ambientSound);
+
         if (sceneInfoPanel != null)
         {
             sceneInfoPanel.gameObject.SetActive(true);
@@ -127,6 +130,8 @@ public class ArtifactSpawner : MonoBehaviour
     private void OnMarkerLost()
     {
         CancelAndDestroyEffect();
+
+        AudioManager.Instance?.StopArtifactAmbient();
 
         if (artifactObject != null)
             artifactObject.SetActive(false);
