@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HatData
   m_EditorClassIdentifier: Assembly-CSharp::ArtifactData
   artifactPrefab: {fileID: 7044577821733506184, guid: 3930216b96a335542b85690de97786c4, type: 3}
-  revealEffectPrefab: {fileID: 0}
+  revealEffectPrefab: {fileID: 2551784190809090663, guid: a94764a48b5165a408f60ca6f81e7217, type: 3}
   artifactName: Magic Hat
   artifactDescription: nlalkdfytgusdfiuyfdif
   artifactImage: {fileID: 21300000, guid: 118c99ea7e03e0e4b99a3d34a24af5fa, type: 3}

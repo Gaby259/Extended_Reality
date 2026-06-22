@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SwordData
   m_EditorClassIdentifier: Assembly-CSharp::ArtifactData
   artifactPrefab: {fileID: 1248316965567887374, guid: 0afb57caa2f64e843930e092cb23095d, type: 3}
-  revealEffectPrefab: {fileID: 0}
+  revealEffectPrefab: {fileID: 6852500255260599943, guid: 27ee913131f40a44f87edeb2bf864947, type: 3}
   artifactName: Magic Sword
   artifactDescription: ertyuieodeofwef[0whfwe
   artifactImage: {fileID: 21300000, guid: ee052b713f9efd744a911f596a72113b, type: 3}
