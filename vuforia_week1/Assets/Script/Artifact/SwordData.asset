@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ArtifactData
   artifactPrefab: {fileID: 1248316965567887374, guid: 0afb57caa2f64e843930e092cb23095d, type: 3}
   revealEffectPrefab: {fileID: 6852500255260599943, guid: 27ee913131f40a44f87edeb2bf864947, type: 3}
-  artifactName: Magic Sword
-  artifactDescription: ertyuieodeofwef[0whfwe
+  artifactName: Magical Sword
+  artifactDescription: When something dark gets too close, this blade remembers what
+    I've forgotten. It moves when danger is near.
   artifactImage: {fileID: 21300000, guid: ee052b713f9efd744a911f596a72113b, type: 3}
   revealSound: {fileID: 8300000, guid: 29f3de6d8384d6c47832d873476314eb, type: 3}
   ambientSound: {fileID: 8300000, guid: d9c31c06882f907448c48286bdb75361, type: 3}

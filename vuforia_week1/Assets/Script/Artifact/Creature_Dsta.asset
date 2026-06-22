@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ArtifactData
   artifactPrefab: {fileID: 4604767847306804441, guid: 3f1736cfd580aed48a45dba7dacd34a7, type: 3}
   revealEffectPrefab: {fileID: 6950779137715890292, guid: 02e2358a85308b2499e3a5ce87f175bb, type: 3}
-  artifactName: Creature
-  artifactDescription: fdhilshdfuihsfuihuhfe
+  artifactName: Trapped Creature
+  artifactDescription: Didn't summon it on purpose. Three binding spells to contain
+    it. It's still angry...I keep it close so I know where it is.
   artifactImage: {fileID: 21300000, guid: c837d6b0f671caf4ab6c399c806ce5fe, type: 3}
   revealSound: {fileID: 8300000, guid: 9b81b3eb5fd77b840a6a4be5fd8f451b, type: 3}
   ambientSound: {fileID: 8300000, guid: 9fd730538c072434bb97586c8c3423bf, type: 3}
